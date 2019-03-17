@@ -8,6 +8,7 @@ class SecondScoreViewModel: ViewModel(){
 
     private val scoreDataA = MutableLiveData<Int>()
     private val scoreDataB = MutableLiveData<Int>()
+    private val isProcessFinish = MutableLiveData<Boolean>()
 
     fun getScoredDataA(): LiveData<Int>{
         return scoreDataA
@@ -15,6 +16,14 @@ class SecondScoreViewModel: ViewModel(){
 
     fun getScoredDataB(): LiveData<Int>{
         return scoreDataB
+    }
+
+    fun finishProcess(){
+        isProcessFinish.value=true
+    }
+
+    fun isFinishProcess():LiveData<Boolean> {
+        return isProcessFinish
     }
 
     fun increaseScoreA(buttonNumber:Int): LiveData<Int> {
@@ -29,7 +38,7 @@ class SecondScoreViewModel: ViewModel(){
         if (scoreDataB.value == null){
             scoreDataB.value=0
         }
-        scoreDataB.value= buttonNumber+ scoreDataB.value!!
+        scoreDataB.postValue(buttonNumber+ scoreDataB.value!!)
         return scoreDataB
     }
 
