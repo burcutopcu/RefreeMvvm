@@ -12,6 +12,9 @@
         <activity android:name=".MainActivity">
         </activity>
 
+        <activity android:name=".DetailActivity">
+        </activity>
+
         <activity android:name=".SecondScoreActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

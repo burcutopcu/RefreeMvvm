@@ -6,6 +6,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.Intents.intended
 import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.matcher.BoundedMatcher
@@ -19,6 +20,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Rule
+
+
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -55,12 +58,16 @@ class ActivityUITest {
 
     @Test
     fun testResetButton_shouldOpenAnotherActivity() {
-        onView(withId(R.id.reset_button_ss))
+        Intents.init()
+
+        onView(withId(R.id.intent_button_ss))
             .perform(click())
 
-        var mainActivity = MainActivity::class.java.name
+        val detailActivity = DetailActivity::class.java.name
 
-        intended(IntentMatchers.hasComponent(mainActivity))
+        intended(IntentMatchers.hasComponent(detailActivity))
+
+        Intents.release()
 
     }
 

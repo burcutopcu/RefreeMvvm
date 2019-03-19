@@ -1,8 +1,12 @@
 package com.burcutopcu.refree.vm
 
+import android.content.Intent
+import android.view.View
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.burcutopcu.refree.DetailActivity
 
 class SecondScoreViewModel: ViewModel(){
 
@@ -47,4 +51,8 @@ class SecondScoreViewModel: ViewModel(){
         scoreDataB.value=0
     }
 
+    fun openDetailActivity(view:View) {
+        val intent = Intent(view.context, DetailActivity::class.java)
+        startActivity(view.context,intent,null)
+    }
 }

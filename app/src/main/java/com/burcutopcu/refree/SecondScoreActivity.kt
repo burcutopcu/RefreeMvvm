@@ -55,7 +55,6 @@ class SecondScoreActivity : AppCompatActivity() {
 
         one_point_button_second_ss.setOnClickListener {
             liveDataViewModel.increaseScoreB(1)
-
         }
 
         reset_button_ss.setOnClickListener {
@@ -64,6 +63,10 @@ class SecondScoreActivity : AppCompatActivity() {
 
         finish_game_button_ss.setOnClickListener {
             liveDataViewModel.finishProcess()
+        }
+
+        intent_button_ss.setOnClickListener {
+            liveDataViewModel.openDetailActivity(it)
         }
 
     }
