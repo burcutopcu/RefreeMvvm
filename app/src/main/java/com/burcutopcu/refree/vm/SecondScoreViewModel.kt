@@ -46,4 +46,5 @@ class SecondScoreViewModel: ViewModel(){
         scoreDataA.value=0
         scoreDataB.value=0
     }
+
 }

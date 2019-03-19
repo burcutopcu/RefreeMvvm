@@ -18,7 +18,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/first_team_ll_ss"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -82,7 +82,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_weight="1"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     android:id="@+id/second_team_ll_ss">
 
                 <TextView
@@ -141,15 +141,23 @@
 
         </LinearLayout>
 
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/content_ll_ss"
+                android:id="@+id/seperator_view"
+                android:background="#E0E0E0"/>
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/content_ll_ss"
                 android:id="@+id/finish_game_button_ss"
+                android:layout_below="@id/seperator_view"
                 android:text="FINISH THE GAME"
                 android:textColor="#ffffff"
                 android:background="@drawable/button_shape"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"/>
 
         <Button
@@ -160,7 +168,18 @@
                 android:text="Reset"
                 android:textColor="#ffffff"
                 android:background="@drawable/button_shape"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reset_button_ss"
+                android:id="@+id/intent_button_ss"
+                android:text="Open Main Activity"
+                android:textColor="#ffffff"
+                android:background="@drawable/button_shape"
+                android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>

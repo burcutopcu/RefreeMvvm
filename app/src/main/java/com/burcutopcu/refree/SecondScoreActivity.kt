@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.burcutopcu.refree.vm.SecondScoreViewModel
 import kotlinx.android.synthetic.main.activity_score.*
+import androidx.lifecycle.Observer
+
 
 class SecondScoreActivity : AppCompatActivity() {
 
@@ -18,13 +20,13 @@ class SecondScoreActivity : AppCompatActivity() {
 
         liveDataViewModel = ViewModelProviders.of(this).get(SecondScoreViewModel::class.java)
 
-        liveDataViewModel.getScoredDataA().observeForever {
+        liveDataViewModel.getScoredDataA().observe(this, Observer<Int> {
             first_score_number_ss.text = it.toString()
-        }
+        })
 
-        liveDataViewModel.getScoredDataB().observeForever {
+        liveDataViewModel.getScoredDataB().observe(this, Observer<Int> {
             second_score_number_ss.text = it.toString()
-        }
+        })
 
         liveDataViewModel.isFinishProcess().observeForever {
             if (it)
